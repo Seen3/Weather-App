@@ -9,7 +9,8 @@ function createClouds(num) {
     cloudBox.style.justifyContent='space-around';
     cloudBox.style.width='100vw';
     cloudBox.style.position='absolute';
-    cloudBox.style.zIndex=9999;
+    cloudBox.style.zIndex=9997;
+    cloudBox.id="cloudbox";
     return cloudBox;
 }
 export default createClouds;
