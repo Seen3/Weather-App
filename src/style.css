@@ -7,7 +7,7 @@ body{
     margin:0;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    cursor: url('./backgrounds/images/moon.png'),auto;
+    overflow: hidden;
 }
 #midground{
     background: url(./backgrounds/images/midground.png) repeat 20% 20%;
@@ -21,3 +21,28 @@ body{
 	top: 0; left: 0; right: 0; bottom: 0;
 	z-index: 998;
 }
+
+hr{
+    width: 50px;
+    border-color: transparent;
+    border-right-color: rgba(255, 255, 255, 0.7);
+    border-right-width: 50px;
+    z-index: 9999;
+    position: absolute;
+    overflow: hidden;
+    bottom: 100%;
+    transform-origin: 100% 50%;
+    animation-name: rain;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  @keyframes rain {
+    from {
+     transform: rotate(105deg) translateX(0);
+    }
+   
+    to {
+     transform: rotate(105deg) translateX(calc(100vh + 20px));
+    }
+   }

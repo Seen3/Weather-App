@@ -1,9 +1,13 @@
+
 function getMouseCoords(e) {
     var e = e || window.event;
+    try{
     document.getElementById('container').innerHTML = e.clientX + ', ' +
       e.clientY + '<br>' + e.screenX + ', ' + e.screenY;
+    }catch{};
   }
   var followCursor = (function() {
+
     var s = document.createElement('div');
     s.id='pointer';
     s.style.position = 'absolute';
@@ -15,10 +19,11 @@ function getMouseCoords(e) {
     s.style.color='yellow';
     s.innerText="☀";
     return {
-      init: function() {
+      init: function(t) {
+        s.innerText=t;
         document.body.appendChild(s);
       },
-  
+      
       run: function(e) {
         var e = e || window.event;
         s.style.left = (e.clientX - 5) + 'px';
